@@ -1,0 +1,23 @@
+﻿@using SendEmailInAspNetCore.Models
+@{ 
+    var data = ViewBag.emailContent;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Test Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+
+<body style="margin: 0; padding: 0;">
+    <h1>Test Email</h1>
+
+    <p>@data.Name left some feedback!</p>
+
+    <p>Message:</p>
+    <p>@data.Message</p>
+</body>
+</html>

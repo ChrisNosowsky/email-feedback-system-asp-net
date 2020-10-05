@@ -1,0 +1,50 @@
+﻿@model SendEmailInAspNetCore.Models.ContactViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<h3>General Feedback - Sending Email in ASP.NET Core Using MailKit</h3>
+<div>
+    <div>
+        @if (ViewBag.Exception != null)
+        {
+            <div>@ViewBag.Exception</div>
+
+
+        }
+    </div>
+</div>
+<div class="has-error" col-md-12>
+    <form method="post">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label asp-for="Subject">Subject:</label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="Message">Message:</label>
+                <textarea rows="8" cols="20" asp-for="Message" class="form-control"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">Send Message</button>
+        </div>
+    </form>
+</div>
